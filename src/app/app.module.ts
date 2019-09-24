@@ -7,11 +7,17 @@ import { ImageUploadPageComponent } from './pages/image-upload-page/image-upload
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ImageDownloadPageComponent } from './pages/image-download-page/image-download-page.component';
+import { FramePageComponent } from './pages/master/frame-page';
+import { NavBarComponent } from './components/shared/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageUploadPageComponent
+    ImageUploadPageComponent,
+    ImageDownloadPageComponent,
+    FramePageComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
