@@ -9,19 +9,15 @@ import { Image } from '../models/Image';
 })
 
 export class DataService {
-    // public url = 'https://localhost:44369'
-    public url = 'http://localhost/images/api/'
+    public url = 'https://localhost:44369'
+    // public url = 'http://localhost/images/api/'
 
 
     constructor(private http: HttpClient) {
     }
 
     public uploadImage(formData: FormData): Observable<any> {
-        return this.http.post(`${this.url}/api/upload`, formData, { reportProgress: true, observe: 'events' });
-    }
-
-    public uploadImages(formDatas: FormData[]): Observable<any> {
-        return this.http.post(`${this.url}/api/downloadImage/`, formDatas, { reportProgress: true, observe: 'events' });
+        return this.http.post(`${this.url}/api/uploadImage`, formData, { reportProgress: true, observe: 'events' });
     }
 
     public listImages() {

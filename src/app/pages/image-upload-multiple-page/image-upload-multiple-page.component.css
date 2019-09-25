@@ -1,5 +1,9 @@
-.card-size-md {
+.drop-size-md {
   width: 250px;
   height: 250px;
+}
+
+.area-color{
+  background-color: #d3d3d3;
 }
 

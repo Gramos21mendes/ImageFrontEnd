@@ -46,7 +46,7 @@ export class ImageUploadPageComponent implements OnInit {
     this._success.pipe(
       debounceTime(5000)
     ).subscribe(() => {
-    this.successMessage = null;
+      this.successMessage = null;
       location.reload();
     }
     );
@@ -59,11 +59,11 @@ export class ImageUploadPageComponent implements OnInit {
     formData.append('Image', this.fileToUpload, archiveData.archiveName);
     formData.append('ImageCaption', this.fileToUpload.name);
     this.data.uploadImage(formData).subscribe(event => {
-      if (event.type === HttpEventType.UploadProgress)
-        this.progress = Math.round(100 * event.loaded / event.total);
-      else if (event.type === HttpEventType.Response) {
+      //progress Bar
+      // if (event.type === HttpEventType.UploadProgress)
+      //   this.progress = Math.round(100 * event.loaded / event.total);
+      if (event.type === HttpEventType.Response) {
         this.show();
-        this.message = 'Upload feito com sucesso !';
         this.onUploadFinished.emit(event.body);
       }
     });
