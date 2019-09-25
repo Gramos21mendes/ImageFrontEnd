@@ -1,0 +1,10 @@
+<div class="container">
+    <br>
+    <div class="row">
+        <div *ngFor="let image of images$ | async">
+            <div class="col-md-4">
+                <app-image-card [image]="image"></app-image-card>
+            </div>
+        </div>
+    </div>
+</div>

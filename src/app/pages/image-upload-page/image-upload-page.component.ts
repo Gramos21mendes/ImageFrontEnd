@@ -45,14 +45,19 @@ export class ImageUploadPageComponent implements OnInit {
     this._success.subscribe((message) => this.successMessage = message);
     this._success.pipe(
       debounceTime(5000)
-    ).subscribe(() => this.successMessage = null);
+    ).subscribe(() => {
+    this.successMessage = null;
+      location.reload();
+    }
+    );
   }
 
   submit(archiveData) {
     console.log("Dados", archiveData);
+    console.log("tipo", this.fileToUpload);
     const formData = new FormData();
     formData.append('Image', this.fileToUpload, archiveData.archiveName);
-    formData.append('ImageCaption', archiveData.archiveName);
+    formData.append('ImageCaption', this.fileToUpload.name);
     this.data.uploadPhoto(formData).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress)
         this.progress = Math.round(100 * event.loaded / event.total);
