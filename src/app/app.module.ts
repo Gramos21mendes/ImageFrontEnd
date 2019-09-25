@@ -10,7 +10,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ImageDownloadPageComponent } from './pages/image-download-page/image-download-page.component';
 import { FramePageComponent } from './pages/master/frame-page';
 import { NavBarComponent } from './components/shared/navbar.component';
-import { ImageCardComponent } from './components/ImageCard/image-card.component';
+import { ImageCardComponent } from './components/image-card/image-card.component';
+import { FileUploadModule } from 'ng2-file-upload';
+import { ImageMultipleUploadPageComponent } from './pages/image-upload-multiple-page/image-upload-multiple-page.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,16 @@ import { ImageCardComponent } from './components/ImageCard/image-card.component'
     ImageDownloadPageComponent,
     FramePageComponent,
     NavBarComponent,
-    ImageCardComponent
+    ImageCardComponent,
+    ImageMultipleUploadPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,7 +16,7 @@ export class ImageDownloadPageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-  this.images$ = this.data.downloadPhoto();
+  this.images$ = this.data.listImages();
   console.log("images", this.images$);
   }
 

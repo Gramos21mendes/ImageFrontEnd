@@ -9,7 +9,7 @@
             </div>
             <form [formGroup]="form" (ngSubmit)="submit(form.value)">
                 <div class="form-group">
-                    <h5 for="staticEmail" class="card-title col-md-12">Titulo da Foto</h5>
+                    <h5 for="staticEmail" class="card-title col-md-12">Titulo da Imagem</h5>
                     <div class="col-md-12">
                         <input type="text" formControlName="archiveName" class="form-control form-control-sm"
                             placeholder="Insira o nome">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-12">
-                        <label class="card-subtitle" for="fileIpunt">Selecione a Foto</label>
+                        <label class="card-subtitle" for="fileIpunt">Selecione a Imagem</label>
                         <input #imageInput type="file" accept="Image/*" formControlName="archive"
                             class="form-control-file" id="fileIpunt" (change)="handleFileInput(imageInput.files)">
                     </div>

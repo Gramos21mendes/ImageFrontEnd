@@ -58,7 +58,7 @@ export class ImageUploadPageComponent implements OnInit {
     const formData = new FormData();
     formData.append('Image', this.fileToUpload, archiveData.archiveName);
     formData.append('ImageCaption', this.fileToUpload.name);
-    this.data.uploadPhoto(formData).subscribe(event => {
+    this.data.uploadImage(formData).subscribe(event => {
       if (event.type === HttpEventType.UploadProgress)
         this.progress = Math.round(100 * event.loaded / event.total);
       else if (event.type === HttpEventType.Response) {

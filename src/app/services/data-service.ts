@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient, HttpEventType } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Image } from '../models/Image';
 
@@ -9,18 +9,27 @@ import { Image } from '../models/Image';
 })
 
 export class DataService {
-    public url = 'https://localhost:44369'
+    // public url = 'https://localhost:44369'
+    public url = 'http://localhost/images/api/'
 
 
     constructor(private http: HttpClient) {
     }
 
-    public uploadPhoto(formData: FormData): Observable<any> {
+    public uploadImage(formData: FormData): Observable<any> {
         return this.http.post(`${this.url}/api/upload`, formData, { reportProgress: true, observe: 'events' });
     }
 
-    public downloadPhoto() {
-        return this.http.get<Image[]>(`${this.url}/api/download`);
+    public uploadImages(formDatas: FormData[]): Observable<any> {
+        return this.http.post(`${this.url}/api/downloadImage/`, formDatas, { reportProgress: true, observe: 'events' });
     }
 
+    public listImages() {
+        return this.http.get<Image[]>(`${this.url}/api/listImages`);
+    }
+
+    public downloadImage(Id: string): Observable<Blob> {
+        const headers = new HttpHeaders().set('content-type', 'multipart/form-data');
+        return this.http.get(`${this.url}/api/downloadImage/` + Id, { headers, responseType: 'blob' });
+    }
 }
