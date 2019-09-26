@@ -13,6 +13,7 @@ import { NavBarComponent } from './components/shared/navbar.component';
 import { ImageCardComponent } from './components/image-card/image-card.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageMultipleUploadPageComponent } from './pages/image-upload-multiple-page/image-upload-multiple-page.component';
+import { ImageMultipleDownloadPageComponent } from './pages/image-download-multiple/image-download-multiple-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ImageMultipleUploadPageComponent } from './pages/image-upload-multiple-
     FramePageComponent,
     NavBarComponent,
     ImageCardComponent,
-    ImageMultipleUploadPageComponent
+    ImageMultipleUploadPageComponent,
+    ImageMultipleDownloadPageComponent
   ],
   imports: [
     BrowserModule,

@@ -12,7 +12,6 @@ export class DataService {
     public url = 'https://localhost:44369'
     // public url = 'http://localhost/images/api/'
 
-
     constructor(private http: HttpClient) {
     }
 
@@ -27,5 +26,10 @@ export class DataService {
     public downloadImage(Id: string): Observable<Blob> {
         const headers = new HttpHeaders().set('content-type', 'multipart/form-data');
         return this.http.get(`${this.url}/api/downloadImage/` + Id, { headers, responseType: 'blob' });
+    }
+
+    public downloadImages(Ids: string[]): Observable<Blob> {
+        const headers = new HttpHeaders().set('content-type', 'application/json');
+        return this.http.post(`${this.url}/api/downloadImages/`, Ids, { headers, responseType: 'blob' });
     }
 }

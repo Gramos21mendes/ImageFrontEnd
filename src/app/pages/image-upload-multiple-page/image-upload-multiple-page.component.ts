@@ -6,7 +6,7 @@ import { debounceTime } from 'rxjs/operators';
 import { HttpEventType } from '@angular/common/http';
 
 @Component({
-  selector: 'app-image-upload-page',
+  selector: 'app-image-upload-multiple-page',
   templateUrl: './image-upload-multiple-page.component.html',
   styleUrls: ['./image-upload-multiple-page.component.css']
 })
