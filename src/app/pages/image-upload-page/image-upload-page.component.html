@@ -5,7 +5,7 @@
     <div class="card text-white bg-dark col-md-5">
         <div class="card-body">
             <div class="form-group">
-                <img [src]="imageUrl" class="img-fluid img-thumbnail" style="width: 250px; height: 250px;">
+                <img [src]="imageUrl" class="card-img-top" style="width: 250px; height: 250px;">
             </div>
             <form [formGroup]="form" (ngSubmit)="submit(form.value)">
                 <div class="form-group">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-6">
-                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Enviar Foto</button>
+                        <button [disabled]="form.invalid" type="submit" class="btn btn-primary">Upload</button>
                     </div>
                 </div>
                 <!-- <div class="progress">

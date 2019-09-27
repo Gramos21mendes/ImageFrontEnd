@@ -1,13 +1,13 @@
 <div class="container">
     <br>
-    <div class="row">
-        <div class="card-deck">
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" *ngFor="let image of images$ | async">
-                <app-image-card [image]="image"></app-image-card>
-            </div>
+    <div class="card-deck">
+        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" *ngFor="let image of images$ | async">
+            <app-image-card [image]="image"></app-image-card>
         </div>
     </div>
     <div class="row">
-        <button (click)="downloadImages(images$)" class="btn btn-primary">Download All Images</button>
+        <div class="col-md-12">
+            <button (click)="downloadImages(images$)" class="btn btn-primary">Download all as zip file</button>
+        </div>
     </div>
 </div>

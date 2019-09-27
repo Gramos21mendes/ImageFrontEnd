@@ -11,6 +11,8 @@ import { Image } from '../models/Image';
 export class DataService {
     public url = 'https://localhost:44369'
     // public url = 'http://localhost/images/api/'
+    //home
+    // public url = 'http://localhost/image/api'
 
     constructor(private http: HttpClient) {
     }
@@ -29,6 +31,7 @@ export class DataService {
     }
 
     public downloadImages(Ids: string[]): Observable<Blob> {
+        debugger;
         const headers = new HttpHeaders().set('content-type', 'application/json');
         return this.http.post(`${this.url}/api/downloadImages/`, Ids, { headers, responseType: 'blob' });
     }

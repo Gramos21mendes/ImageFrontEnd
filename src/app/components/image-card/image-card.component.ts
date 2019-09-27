@@ -21,10 +21,10 @@ export class ImageCardComponent implements OnInit {
     }
 
     downloadImage(image: Image) {
+        debugger;
         this.data.downloadImage(image.ImageId).subscribe(response => {
-            const data = new Blob([response], { type: "image/jpeg"});
-            saveAs(data, image.ImageName);
-            console.log(data);
+            // const data = new Blob([response], { type: "image/jpeg"});
+            saveAs(response, image.ImageName);
         });
     }
 }

@@ -11,6 +11,8 @@ import { saveAs } from 'file-saver';
 
 export class ImageMultipleDownloadPageComponent implements OnInit {
     public images$: Observable<Image[]>;
+    public ids: string[] = [];
+    public images: Image[] = [];
     constructor(private data: DataService) {
 
     }
@@ -21,17 +23,13 @@ export class ImageMultipleDownloadPageComponent implements OnInit {
     }
 
     downloadImages(images: Observable<Image[]>) {
-        let ids = [];
         images.subscribe(images => {
-            for (let image of images) {
-                ids.push(image.ImageId);
-            }
-        })
-
-        debugger;
-        this.data.downloadImages(ids).subscribe(response => {
-            const data = new Blob([response], { type: "application/zip" });
-            saveAs(data);
+            debugger;
+            this.ids = images.map(image => { return image.ImageId });
+            this.data.downloadImages(this.ids).subscribe(response => {
+                const data = new Blob([response], { type: "application/zip" });
+                saveAs(data);
+            });
         });
     }
 }
